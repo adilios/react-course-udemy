@@ -2,21 +2,19 @@ import ExpenseDate from "../ExpenseDate/ExpenseDate";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
-  const expenses = props.props;
+  console.log(props.date);
 
-  console.log(expenses[0].date);
-
-  return expenses.map((exp) => (
-    <div className="expense-item" key={exp?.id}>
+  return (
+    <div className="expense-item" key={props?.id}>
       <div>
-        <ExpenseDate date = {exp?.date}/>
+        <ExpenseDate date = {props?.date}/>
       </div>
       <div className="expense-item__description">
-        <h2>{exp?.title}</h2>
-        <div className="expense-item__price">{exp?.amount}$</div>
+        <h2>{props?.title}</h2>
+        <div className="expense-item__price">{props?.amount}$</div>
       </div>
     </div>
-  ));
+  );
 };
 
 export default ExpenseItem;

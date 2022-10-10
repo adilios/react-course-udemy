@@ -1,24 +1,15 @@
-const ExpenseDate = ({props}) => {
+import './ExpenseDate.css'
 
-
-  const month = (value) => {
-    return value.toLocaleString("en-US", { month: "long" });
-  };
-  
-  const day = (value) => {
-    return value.toLocaleString("en-US", { day: "2-digit" });
-  };
-
-  const year = (value) => {
-    return value.getFullYear();
-  };
-
+const ExpenseDate = (props) => {
+  const day = props?.date.toLocaleString("en-US", { month: "long" });
+  const month = props?.date.toLocaleString("en-US", { day: "2-digit" });
+  const year = props?.date.getFullYear();
   return (
-    <>
-      <div>{month(props)}</div>
-      <p>{day(props)}</p>
-      <p>{year(props)}</p>
-    </>
+    <div className="expense-date">
+      <div className="expense-date__month">{month}</div>
+      <div className="expense-date__year">{year}</div>
+      <div className="expense-date__day">{day}</div>
+    </div>
   );
 };
 
