@@ -1,5 +1,5 @@
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
-import Card from "../Card.js/Card";
+import Card from "../UI/Card.js/Card";
 import "./Expenses.css";
 
 const Expenses = (props) => {
